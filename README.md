@@ -1,173 +1,378 @@
-ESTRUCTURA PROFESIONAL DEFINITIVA
+# 🍽️ Comandago Platform - Sistema de Menú Digital Profesional
 
-Esta será la estructura REAL del proyecto.
+Una plataforma completa para crear y gestionar menús digitales premium con soporte multiidioma, carrito de compras integrado y WhatsApp API.
 
-Créala EXACTAMENTE así en VS Code:
+---
 
+## 📋 Tabla de Contenidos
+
+- [Características](#características)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Instalación](#instalación)
+- [Configuración](#configuración)
+- [Uso](#uso)
+- [Despliegue](#despliegue)
+- [Documentación](#documentación)
+
+---
+
+## ✨ Características
+
+✅ **Menú Digital Responsivo**
+- Diseño mobile-first
+- Soporte para tablets y desktop
+- Visualización optimizada de productos
+
+✅ **Sistema de Carrito**
+- Agregar/eliminar productos
+- Cálculo automático de totales
+- Persistencia en localStorage
+
+✅ **Integración WhatsApp**
+- Envío directo de órdenes
+- Mensajes personalizados
+- Tracking de pedidos
+
+✅ **Multiidioma**
+- Español e Inglés
+- Fácil de extender
+- Traductor en tiempo real
+
+✅ **Admin Dashboard**
+- Editor de menús
+- Gestión de restaurantes
+- Configuración de precios
+
+✅ **Demos Interactivas**
+- QR para móviles
+- Previsualizaciones responsive
+- Pruebas en tiempo real
+
+---
+
+## 📁 Estructura del Proyecto
+
+```
 comandago-platform/
 │
-├── index.html
-├── README.md
-├── package.json
-├── .gitignore
+├── index.html                    # Página principal
+├── README.md                     # Este archivo
+├── package.json                  # Dependencias (si aplica)
+├── .gitignore                    # Archivos a ignorar
 │
-├── assets/
-│   │
+├── assets/                       # Recursos estáticos
 │   ├── css/
-│   │   ├── global.css
-│   │   ├── menu.css
-│   │   ├── landing.css
-│   │   ├── cart.css
-│   │   └── responsive.css
+│   │   ├── global.css           # Estilos globales
+│   │   ├── menu.css             # Estilos del menú
+│   │   ├── landing.css          # Estilos landing
+│   │   ├── cart.css             # Estilos del carrito
+│   │   └── responsive.css       # Media queries
 │   │
 │   ├── js/
-│   │   ├── app.js
-│   │   ├── menu.js
-│   │   ├── cart.js
-│   │   ├── whatsapp.js
-│   │   ├── translations.js
-│   │   └── api.js
+│   │   ├── app.js               # Inicializador principal
+│   │   ├── menu.js              # Lógica del menú
+│   │   ├── cart.js              # Gestión del carrito
+│   │   ├── whatsapp.js          # Integración WhatsApp
+│   │   ├── translations.js      # Gestión de idiomas
+│   │   └── api.js               # Llamadas API
 │   │
-│   ├── images/
-│   │
-│   └── icons/
+│   ├── images/                  # Imágenes del proyecto
+│   └── icons/                   # Iconos SVG
 │
-├── components/
-│   │
-│   ├── navbar.html
-│   ├── footer.html
-│   ├── hero.html
-│   ├── menu-card.html
-│   ├── category-tabs.html
-│   ├── cart-modal.html
-│   ├── whatsapp-button.html
-│   └── language-switcher.html
+├── components/                  # Componentes HTML reutilizables
+│   ├── navbar.html              # Barra de navegación
+│   ├── footer.html              # Pie de página
+│   ├── hero.html                # Sección hero
+│   ├── menu-card.html           # Tarjeta de producto
+│   ├── category-tabs.html       # Tabs de categorías
+│   ├── cart-modal.html          # Modal del carrito
+│   ├── whatsapp-button.html     # Botón WhatsApp
+│   └── language-switcher.html   # Selector de idioma
 │
-├── templates/
-│   │
+├── templates/                   # Plantillas completas
 │   ├── premium-menu/
-│   │   ├── index.html
-│   │   └── config.json
+│   │   ├── index.html           # Menú premium
+│   │   └── config.json          # Configuración
 │   │
 │   ├── weekly-menu/
-│   │   ├── index.html
-│   │   └── config.json
+│   │   ├── index.html           # Menú semanal
+│   │   └── config.json          # Configuración
 │   │
 │   └── landing-page/
-│       ├── index.html
-│       └── config.json
+│       ├── index.html           # Página de inicio
+│       └── config.json          # Configuración
 │
-├── data/
-│   │
+├── data/                        # Datos estáticos
 │   ├── restaurants/
-│   │   ├── verano-estate.json
-│   │   ├── taqueria-demo.json
-│   │   └── sushi-demo.json
+│   │   ├── verano-estate.json   # Restaurante 1
+│   │   ├── taqueria-demo.json   # Restaurante 2
+│   │   └── sushi-demo.json      # Restaurante 3
 │   │
 │   ├── menus/
-│   │   ├── breakfast.json
-│   │   ├── lunch.json
-│   │   ├── dinner.json
-│   │   └── drinks.json
+│   │   ├── breakfast.json       # Menú desayuno
+│   │   ├── lunch.json           # Menú almuerzo
+│   │   ├── dinner.json          # Menú cena
+│   │   └── drinks.json          # Menú bebidas
 │   │
 │   └── translations/
-│       ├── es.json
-│       └── en.json
+│       ├── es.json              # Español
+│       └── en.json              # Inglés
 │
-├── admin/
-│   │
-│   ├── dashboard.html
-│   ├── menu-editor.html
-│   └── restaurant-settings.html
+├── admin/                       # Panel administrativo
+│   ├── dashboard.html           # Dashboard principal
+│   ├── menu-editor.html         # Editor de menús
+│   └── restaurant-settings.html # Configuración
 │
-├── demo/
-│   │
-│   ├── qr-demo.html
-│   ├── mobile-demo.html
-│   └── tablet-demo.html
+├── demo/                        # Demos y pruebas
+│   ├── qr-demo.html             # Demo QR
+│   ├── mobile-demo.html         # Demo mobile
+│   └── tablet-demo.html         # Demo tablet
 │
-└── docs/
-    ├── installation.md
-    ├── deploy.md
-    └── customization.md
-QUÉ VAMOS A HACER CON TUS ARCHIVOS
-ARCHIVO 1
-epicure-menu.html
+└── docs/                        # Documentación
+    ├── installation.md          # Guía de instalación
+    ├── deploy.md                # Guía de despliegue
+    └── customization.md         # Guía de personalización
+```
 
-Se convierte en:
-templates/premium-menu/index.html
-Separaremos:
-CSS
-assets/css/menu.css
-JavaScript
-assets/js/menu.js
-Datos del menú
-data/menus/dinner.json
-ARCHIVO 2
-Untitled-1.html
+---
 
-Se convierte en:
-templates/weekly-menu/index.html
-Funciones que extraeremos:
-carrito
-assets/js/cart.js
-WhatsApp
-assets/js/whatsapp.js
-traducciones
-assets/js/translations.js
-ARCHIVO 3
-welcome.html
+## 🚀 Instalación
 
-Se convierte en:
-templates/landing-page/index.html
-Componentes:
-Hero
-components/hero.html
-CTA
-components/cta.html
-Footer
-components/footer.html
-ARCHIVO 4
-menu verano.html
+### Requisitos
+- Navegador web moderno (Chrome, Firefox, Safari, Edge)
+- Editor de código (VS Code recomendado)
+- Git (opcional, para control de versiones)
 
-Se convierte en:
-data/restaurants/verano-estate.json
+### Pasos
 
-Porque:
+1. **Clonar o descargar el repositorio**
+```bash
+git clone https://github.com/ratauille/solid-octo-doodle.git
+cd solid-octo-doodle
+```
 
-tiene branding
-tiene menú
-tiene identidad del restaurante
-CÓMO ORGANIZARLO EN VS CODE
-PASO 1
+2. **Abrir en el navegador**
+```bash
+# Opción 1: Abrir directamente
+open index.html
 
-Crear carpeta:
+# Opción 2: Usar Live Server en VS Code
+# Instalar extensión: Live Server
+# Click derecho en index.html → Open with Live Server
+```
 
-comandago-platform
-PASO 2
+3. **Verificar la estructura**
+```bash
+# Asegúrate que todas las carpetas existan
+ls -la assets/css/
+ls -la assets/js/
+ls -la components/
+ls -la data/
+```
 
-Abrir en VS Code
+---
 
-PASO 3
+## ⚙️ Configuración
 
-Crear TODAS las carpetas
+### 1. Datos del Restaurante
 
-PASO 4
+Edita `data/restaurants/verano-estate.json`:
 
-Mover archivos originales a:
+```json
+{
+  "name": "Tu Restaurante",
+  "description": "Descripción del restaurante",
+  "logo": "assets/images/logo.png",
+  "phone": "+34123456789",
+  "whatsapp": "34123456789",
+  "email": "contacto@turestaurante.com",
+  "address": "Tu dirección",
+  "hours": {
+    "monday": "11:00 - 23:00",
+    "tuesday": "11:00 - 23:00"
+  }
+}
+```
 
-legacy/
+### 2. Menú de Productos
 
-Así no pierdes nada.
+Edita `data/menus/dinner.json`:
 
-MUY IMPORTANTE
-NO MODIFICAR ARCHIVOS ORIGINALES
+```json
+{
+  "category": "Cenas",
+  "items": [
+    {
+      "id": 1,
+      "name": "Plato Premium",
+      "description": "Descripción del plato",
+      "price": 25.99,
+      "image": "assets/images/plato.jpg",
+      "allergies": ["gluten", "lactosa"],
+      "vegetarian": false
+    }
+  ]
+}
+```
 
-Copia y limpia.
+### 3. Idiomas
 
-Nunca trabajes directo sobre:
+Edita `data/translations/es.json` y `en.json`:
 
-epicure-menu.html
-Untitled-1.html
+```json
+{
+  "menu": "Menú",
+  "cart": "Carrito",
+  "order": "Hacer Pedido",
+  "language": "Idioma"
+}
+```
 
-Porque luego rompes cosas.# solid-octo-doodle
+### 4. Número de WhatsApp
+
+En `assets/js/whatsapp.js`, configura tu número:
+
+```javascript
+const WHATSAPP_NUMBER = "34123456789"; // Tu número sin +
+const WHATSAPP_MESSAGE = "Hola, quisiera ordenar...";
+```
+
+---
+
+## 📱 Uso
+
+### Para Clientes
+
+1. Abre `index.html` o la URL de tu sitio
+2. Selecciona categorías y productos
+3. Agrega al carrito
+4. Selecciona idioma si lo deseas
+5. Haz clic en "Pedir por WhatsApp"
+
+### Para Administradores
+
+1. Accede a `admin/dashboard.html`
+2. Edita menús en `admin/menu-editor.html`
+3. Configura restaurante en `admin/restaurant-settings.html`
+
+### Para Desarrolladores
+
+Estructura de archivos JavaScript:
+
+```javascript
+// app.js - Inicializador
+import { initMenu } from './menu.js';
+import { initCart } from './cart.js';
+import { initTranslations } from './translations.js';
+
+// menu.js - Lógica del menú
+export function initMenu() { }
+export function renderMenu(data) { }
+
+// cart.js - Gestión del carrito
+export function addToCart(item) { }
+export function removeFromCart(id) { }
+
+// translations.js - Multiidioma
+export function changeLanguage(lang) { }
+export function t(key) { } // Acceso a traducciones
+```
+
+---
+
+## 🌐 Despliegue
+
+### Opción 1: GitHub Pages (RECOMENDADO)
+
+1. **Crea un repositorio en GitHub**
+2. **Sube el código**
+```bash
+git add .
+git commit -m "Setup: Estructura profesional del proyecto"
+git push origin main
+```
+
+3. **Activa GitHub Pages**
+   - Ve a `Settings` → `Pages`
+   - Selecciona `main` como rama
+   - Selecciona `/ (root)` como carpeta
+   - Haz clic en `Save`
+
+4. **Tu sitio estará disponible en:**
+```
+https://tuusuario.github.io/solid-octo-doodle/
+```
+
+### Opción 2: Vercel
+
+1. Conecta tu repositorio a Vercel
+2. Vercel desplegará automáticamente
+3. Obtén tu URL: `https://tuproyecto.vercel.app`
+
+### Opción 3: Netlify
+
+1. Arrastra la carpeta a https://app.netlify.com
+2. O conecta tu repositorio
+3. Obtén tu URL automáticamente
+
+---
+
+## 📚 Documentación
+
+Consulta las guías detalladas:
+
+- **[installation.md](./docs/installation.md)** - Instalación paso a paso
+- **[deploy.md](./docs/deploy.md)** - Guía de despliegue completa
+- **[customization.md](./docs/customization.md)** - Personalización avanzada
+
+---
+
+## 🎯 Próximos Pasos
+
+- [ ] Agregar base de datos (Firebase/Supabase)
+- [ ] Sistema de pedidos completo
+- [ ] Panel de administración avanzado
+- [ ] Análisis y reportes
+- [ ] Programa de lealtad
+- [ ] Integración con sistemas de pago
+
+---
+
+## 🤝 Contribuir
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Haz un fork del proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
+
+---
+
+## 📞 Contacto
+
+- **Email:** contacto@comandago.com
+- **WhatsApp:** +34 123 456 789
+- **GitHub:** [@ratauille](https://github.com/ratauille)
+
+---
+
+## 🎉 Estado del Proyecto
+
+✅ Estructura base completada
+⏳ Funcionalidad core en desarrollo
+⏳ Panel de admin en progreso
+⏳ Documentación completa
+
+**Última actualización:** 2026-05-14
+
+---
+
+**Creado con ❤️ por Ratauille**
