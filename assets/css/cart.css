@@ -1,8 +1,7 @@
-/* ==========================================
-   CART STYLES - Estilos del Carrito
-   ========================================== */
+/* ================================
+   CART & MODAL STYLES
+   ================================ */
 
-/* Cart Modal */
 .cart-modal {
     display: none;
     position: fixed;
@@ -13,75 +12,76 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     animation: fadeIn 0.3s ease;
-    overflow-y: auto;
 }
 
 .cart-modal.active {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .modal-content {
-    background: white;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    width: 100%;
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    width: 90%;
     max-width: 500px;
     max-height: 90vh;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    box-shadow: var(--shadow-lg);
     animation: slideUp 0.3s ease;
 }
 
 @keyframes slideUp {
     from {
-        transform: translateY(100%);
+        transform: translateY(20px);
+        opacity: 0;
     }
     to {
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
 .modal-header {
-    padding: var(--spacing-lg);
-    border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-    color: white;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .modal-header h2 {
     margin: 0;
-    font-size: 1.5rem;
+    color: var(--dark-color);
 }
 
 .modal-close {
     background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
+    font-size: 28px;
+    color: var(--dark-color);
     cursor: pointer;
     padding: 0;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition);
 }
 
 .modal-close:hover {
-    transform: rotate(90deg);
+    color: var(--primary-color);
 }
 
-/* Modal Body */
 .modal-body {
-    flex: 1;
-    overflow-y: auto;
     padding: var(--spacing-lg);
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .cart-items {
@@ -95,103 +95,88 @@
     display: flex;
     gap: var(--spacing-md);
     padding: var(--spacing-md);
-    background-color: var(--light);
-    border-radius: var(--radius-md);
-    border-left: 4px solid var(--primary);
-    animation: fadeIn 0.3s ease;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius-md);
+    border-left: 4px solid var(--primary-color);
 }
 
 .cart-item-image {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
     background-color: white;
-    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 32px;
     flex-shrink: 0;
-    overflow: hidden;
 }
 
-.cart-item-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.cart-item-content {
+    flex-grow: 1;
 }
 
-.cart-item-info {
-    flex: 1;
-}
-
-.cart-item-name {
-    font-weight: 700;
-    color: var(--dark);
-    margin-bottom: var(--spacing-xs);
+.cart-item-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--dark-color);
 }
 
 .cart-item-price {
-    color: var(--primary);
+    color: var(--primary-color);
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
 }
 
-.cart-item-quantity {
+.cart-item-controls {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
 }
 
-.cart-item-qty-btn {
-    width: 24px;
-    height: 24px;
+.qty-button {
+    width: 28px;
+    height: 28px;
     padding: 0;
     background-color: white;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: var(--transition);
-}
-
-.cart-item-qty-btn:hover {
-    background-color: var(--primary);
-    color: white;
-    border-color: var(--primary);
-}
-
-.cart-item-qty {
     font-weight: 600;
-    min-width: 20px;
+}
+
+.qty-button:hover {
+    background-color: var(--light-color);
+}
+
+.qty-input {
+    width: 40px;
     text-align: center;
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
 }
 
-.cart-item-remove {
-    background: none;
-    border: none;
-    color: var(--danger);
-    cursor: pointer;
-    font-size: 1.25rem;
-    padding: 0;
-    transition: var(--transition);
+.remove-btn {
+    background-color: var(--warning-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
 }
 
-.cart-item-remove:hover {
-    color: #B71C1C;
+.remove-btn:hover {
+    background-color: #C0392B;
 }
 
-/* Empty Cart Message */
-.empty-cart-message {
-    text-align: center;
-    padding: var(--spacing-2xl);
-    color: var(--text-light);
-}
-
-/* Modal Footer */
 .modal-footer {
     padding: var(--spacing-lg);
-    border-top: 2px solid var(--border);
-    background-color: var(--light);
+    border-top: 1px solid var(--border-color);
+    background-color: var(--light-color);
 }
 
 /* Cart Summary */
@@ -202,96 +187,42 @@
 .summary-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: var(--spacing-sm) 0;
-    color: var(--text);
-}
-
-.summary-row span:last-child {
-    font-weight: 600;
-    color: var(--dark);
+    font-size: var(--font-size-sm);
 }
 
 .summary-row.total {
-    padding: var(--spacing-md) 0;
-    border-top: 2px solid var(--border);
-    border-bottom: 2px solid var(--border);
-    font-size: 1.1rem;
-}
-
-.summary-row.total span:last-child {
-    color: var(--primary);
-    font-size: 1.25rem;
+    border-top: 2px solid var(--border-color);
+    padding-top: var(--spacing-md);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 /* WhatsApp Button */
 .whatsapp-button {
     width: 100%;
-    padding: var(--spacing-lg);
-    background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
+    padding: var(--spacing-md);
+    background-color: #25D366;
     color: white;
-    border: none;
-    border-radius: var(--radius-md);
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: var(--transition);
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    font-size: var(--font-size-base);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .whatsapp-button:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    background-color: #1FAC5E;
+    transform: scale(1.02);
 }
 
-.whatsapp-button:active {
-    transform: scale(0.98);
-}
-
-.whatsapp-icon {
-    font-size: 1.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .modal-content {
-        max-width: 100%;
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    }
-
-    .cart-item {
-        gap: var(--spacing-sm);
-    }
-
-    .cart-item-image {
-        width: 70px;
-        height: 70px;
-        font-size: 1.5rem;
-    }
-
-    .modal-header h2 {
-        font-size: 1.25rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .modal-content {
-        max-height: 100vh;
-    }
-
-    .modal-body {
-        padding: var(--spacing-md);
-    }
-
-    .cart-item {
-        padding: var(--spacing-sm);
-    }
-
-    .whatsapp-button {
-        padding: var(--spacing-md);
-        font-size: 1rem;
-    }
+.whatsapp-button:disabled {
+    background-color: #BDC3C7;
+    cursor: not-allowed;
+    transform: none;
 }
