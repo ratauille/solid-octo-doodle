@@ -20,9 +20,6 @@ const TRANSLATIONS = {
         lunch: 'Almuerzo',
         dinner: 'Cena',
         drinks: 'Bebidas',
-        entradas: 'Entradas',
-        fuertes: 'Platos Fuertes',
-        postres: 'Postres',
         
         // Menu
         loading: 'Cargando menú...',
@@ -71,9 +68,6 @@ const TRANSLATIONS = {
         lunch: 'Lunch',
         dinner: 'Dinner',
         drinks: 'Drinks',
-        entradas: 'Appetizers',
-        fuertes: 'Main Courses',
-        postres: 'Desserts',
         
         // Menu
         loading: 'Loading menu...',
@@ -133,6 +127,7 @@ class TranslationManager {
     }
     
     updatePageLanguage() {
+        // Actualizar elementos por ID
         const elementsToUpdate = [
             'heroTitle', 'heroSubtitle', 'allTab', 'loadingText', 'emptyCartMessage',
             'cartTitle', 'subtotalLabel', 'subtotalValue', 'taxLabel', 'taxValue',
@@ -154,7 +149,7 @@ class TranslationManager {
     }
     
     camelToSnake(str) {
-        return str.replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase();
+        return str.replace(/([a-z])([A-Z])/g, '$1$2').toLowerCase();
     }
     
     dispatchLanguageChangeEvent() {
@@ -164,4 +159,10 @@ class TranslationManager {
     }
 }
 
+// Instancia global
 const translator = new TranslationManager();
+
+// Exportar para uso en otros módulos
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { TranslationManager, translator };
+}

@@ -4,13 +4,7 @@
  */
 
 class App {
-    constructor(config = {}) {
-        this.config = {
-            menuDataUrl: 'data/menus/dinner.json',
-            whatsappNumber: '34123456789',
-            restaurantName: 'Comandago',
-            ...config
-        };
+    constructor() {
         this.initialized = false;
     }
     
@@ -18,6 +12,7 @@ class App {
         if (this.initialized) return;
         
         try {
+            // Inicializar módulos en orden
             console.log('🚀 Iniciando Comandago Platform...');
             
             // 1. Sistema de traducciones
@@ -30,13 +25,10 @@ class App {
             
             // 3. Menú
             console.log('🍽️ Inicializando menú...');
-            menuManager.menuDataUrl = this.config.menuDataUrl;
             menuManager.init();
             
             // 4. WhatsApp
             console.log('📱 Inicializando WhatsApp...');
-            whatsappManager.setPhoneNumber(this.config.whatsappNumber);
-            whatsappManager.setRestaurantName(this.config.restaurantName);
             whatsappManager.init();
             
             // 5. Event listeners globales
@@ -53,6 +45,7 @@ class App {
     }
     
     setupGlobalListeners() {
+        // Cambio de idioma
         const languageSwitcher = document.getElementById('languageSwitcher');
         if (languageSwitcher) {
             languageSwitcher.addEventListener('click', () => {
@@ -63,6 +56,7 @@ class App {
             });
         }
         
+        // Cerrar modal con tecla Esc
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 const cartModal = document.getElementById('cartModal');
@@ -74,6 +68,7 @@ class App {
     }
     
     setupAccessibility() {
+        // Agregar roles ARIA
         const navBar = document.getElementById('navbar');
         if (navBar) navBar.setAttribute('role', 'navigation');
         
@@ -83,6 +78,7 @@ class App {
         const footer = document.querySelector('.footer');
         if (footer) footer.setAttribute('role', 'contentinfo');
         
+        // Mejorar contraste de enlaces
         document.querySelectorAll('a').forEach(link => {
             if (!link.getAttribute('aria-label')) {
                 link.setAttribute('aria-label', link.textContent || 'Enlace');
@@ -91,6 +87,7 @@ class App {
     }
 }
 
+// Inicializar cuando el DOM esté listo
 const app = new App();
 
 if (document.readyState === 'loading') {
@@ -99,6 +96,7 @@ if (document.readyState === 'loading') {
     app.init();
 }
 
+// Permitir acceso global para debugging
 window.app = app;
 window.cart = cart;
 window.menuManager = menuManager;

@@ -33,6 +33,7 @@ class CartManager {
             });
         }
         
+        // Listener para cambios de idioma
         window.addEventListener('languageChanged', () => this.updateUI());
     }
     
@@ -126,10 +127,12 @@ class CartManager {
             </div>
         `).join('');
         
+        // Configurar listeners para controles
         this.attachCartItemListeners();
     }
     
     attachCartItemListeners() {
+        // Botones de aumentar cantidad
         document.querySelectorAll('.qty-increase').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const id = e.target.dataset.id;
@@ -138,6 +141,7 @@ class CartManager {
             });
         });
         
+        // Botones de disminuir cantidad
         document.querySelectorAll('.qty-decrease').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const id = e.target.dataset.id;
@@ -146,6 +150,7 @@ class CartManager {
             });
         });
         
+        // Input de cantidad
         document.querySelectorAll('.qty-input').forEach(input => {
             input.addEventListener('change', (e) => {
                 const id = e.target.dataset.id;
@@ -154,6 +159,7 @@ class CartManager {
             });
         });
         
+        // Botones de eliminar
         document.querySelectorAll('.remove-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 this.removeItem(e.target.dataset.id);
@@ -174,6 +180,7 @@ class CartManager {
         if (taxElement) taxElement.textContent = `$${tax.toFixed(2)}`;
         if (totalElement) totalElement.textContent = `$${total.toFixed(2)}`;
         
+        // Habilitar/deshabilitar botón de orden
         const whatsappButton = document.getElementById('whatsappButton');
         if (whatsappButton) {
             whatsappButton.disabled = this.items.length === 0;

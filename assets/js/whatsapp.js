@@ -4,9 +4,10 @@
  */
 
 class WhatsAppManager {
-    constructor(phoneNumber = '34123456789', restaurantName = 'Comandago') {
-        this.WHATSAPP_NUMBER = phoneNumber.replace(/[^0-9]/g, '');
-        this.RESTAURANT_NAME = restaurantName;
+    constructor() {
+        // Configuración de WhatsApp
+        this.WHATSAPP_NUMBER = '34123456789'; // Número sin +
+        this.RESTAURANT_NAME = 'Comandago';
     }
     
     init() {
@@ -29,7 +30,6 @@ class WhatsAppManager {
         const whatsappUrl = `https://wa.me/${this.WHATSAPP_NUMBER}?text=${encodedMessage}`;
         
         window.open(whatsappUrl, '_blank');
-        cart.clear();
     }
     
     generateMessage(items) {
@@ -38,6 +38,7 @@ class WhatsAppManager {
         lines.push(`🍽️ *Nuevo Pedido - ${this.RESTAURANT_NAME}*\n`);
         lines.push('📋 *Detalles del pedido:*\n');
         
+        // Listar items
         items.forEach((item, index) => {
             const subtotal = (item.price * item.quantity).toFixed(2);
             lines.push(`${index + 1}. ${item.name}`);
@@ -47,6 +48,7 @@ class WhatsAppManager {
             lines.push('');
         });
         
+        // Resumen
         const subtotal = cart.getSubtotal().toFixed(2);
         const tax = cart.getTax().toFixed(2);
         const total = cart.getTotal().toFixed(2);
@@ -64,10 +66,6 @@ class WhatsAppManager {
     
     setPhoneNumber(number) {
         this.WHATSAPP_NUMBER = number.replace(/[^0-9]/g, '');
-    }
-    
-    setRestaurantName(name) {
-        this.RESTAURANT_NAME = name;
     }
 }
 

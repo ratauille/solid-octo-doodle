@@ -4,8 +4,7 @@
  */
 
 class MenuManager {
-    constructor(menuDataUrl = 'data/menus/dinner.json') {
-        this.menuDataUrl = menuDataUrl;
+    constructor() {
         this.menuData = null;
         this.filteredData = null;
         this.currentCategory = 'all';
@@ -13,11 +12,15 @@ class MenuManager {
     
     async init() {
         try {
-            const response = await fetch(this.menuDataUrl);
+            // Cargar datos del menú
+            const response = await fetch('data/menus/dinner.json');
             this.menuData = await response.json();
             this.filteredData = this.menuData;
             
+            // Renderizar menú
             this.render();
+            
+            // Configurar listeners
             this.setupListeners();
         } catch (error) {
             console.error('Error cargando menú:', error);
@@ -26,6 +29,7 @@ class MenuManager {
     }
     
     setupListeners() {
+        // Listeners para categorías
         const categoryButtons = document.querySelectorAll('.tab-button');
         categoryButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -33,12 +37,14 @@ class MenuManager {
             });
         });
         
+        // Listeners para agregar al carrito
         this.attachAddToCartListeners();
     }
     
     filterByCategory(category) {
         this.currentCategory = category;
         
+        // Actualizar botones activos
         document.querySelectorAll('.tab-button').forEach(btn => {
             btn.classList.remove('active');
             if (btn.dataset.category === category) {
@@ -46,12 +52,14 @@ class MenuManager {
             }
         });
         
+        // Filtrar datos
         if (category === 'all') {
             this.filteredData = this.menuData;
         } else {
             this.filteredData = this.menuData.filter(item => item.category === category);
         }
         
+        // Re-renderizar
         this.renderItems();
         this.attachAddToCartListeners();
     }
@@ -65,10 +73,12 @@ class MenuManager {
         const categoryTabs = document.getElementById('categoryTabs');
         if (!categoryTabs || !this.menuData) return;
         
+        // Obtener categorías únicas
         const categories = ['all', ...new Set(this.menuData.map(item => item.category))];
         
+        // Crear botones de categoría
         categoryTabs.innerHTML = categories.map(cat => {
-            const label = cat === 'all' ? translator.t('allTab') : translator.t(cat.toLowerCase()) || cat;
+            const label = cat === 'all' ? translator.t('allTab') : cat;
             return `
                 <button class="tab-button ${cat === 'all' ? 'active' : ''}" data-category="${cat}">
                     <span>${label}</span>
@@ -150,6 +160,8 @@ class MenuManager {
                 };
                 
                 cart.addItem(item);
+                
+                // Feedback visual
                 btn.classList.add('added');
                 setTimeout(() => btn.classList.remove('added'), 1000);
             });
