@@ -1,0 +1,28 @@
+{
+  "id": 1,
+  "name": "Verano Estate",
+  "description": "Restaurante de comida mediterránea premium",
+  "logo": "assets/images/logo.png",
+  "phone": "+34 123 456 789",
+  "whatsapp": "34123456789",
+  "email": "contacto@veranoestates.com",
+  "address": "Calle Principal 123, Barcelona",
+  "coordinates": {
+    "latitude": 41.3874,
+    "longitude": 2.1686
+  },
+  "hours": {
+    "monday": "Cerrado",
+    "tuesday": "12:00 - 23:00",
+    "wednesday": "12:00 - 23:00",
+    "thursday": "12:00 - 23:00",
+    "friday": "12:00 - 00:00",
+    "saturday": "11:00 - 00:00",
+    "sunday": "11:00 - 23:00"
+  },
+  "social": {
+    "instagram": "@veranoestates",
+    "facebook": "veranoestates",
+    "twitter": "@veranoestates"
+  }
+}
