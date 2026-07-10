@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "name": "Filete Premium",
+    "category": "Cenas",
+    "description": "Filete jugoso con salsa de champiñones",
+    "price": 28.99,
+    "emoji": "🥩",
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": false,
+    "spicy": false,
+    "allergens": ["gluten", "lácteos"]
+  },
+  {
+    "id": 2,
+    "name": "Pasta Carbonara",
+    "category": "Cenas",
+    "description": "Clásica pasta italiana con huevo y jamón",
+    "price": 18.99,
+    "emoji": "🍝",
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": false,
+    "spicy": false,
+    "allergens": ["gluten", "huevo", "lácteos"]
+  },
+  {
+    "id": 3,
+    "name": "Salmón a la Mantequilla",
+    "category": "Cenas",
+    "description": "Salmón fresco con salsa de limón y eneldo",
+    "price": 24.99,
+    "emoji": "🐟",
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": true,
+    "spicy": false,
+    "allergens": ["pescado", "lácteos"]
+  },
+  {
+    "id": 4,
+    "name": "Ensalada Verde",
+    "category": "Ensaladas",
+    "description": "Mixta fresca con vinagreta de casa",
+    "price": 12.99,
+    "emoji": "🥗",
+    "vegetarian": true,
+    "vegan": false,
+    "glutenFree": true,
+    "spicy": false,
+    "allergens": []
+  },
+  {
+    "id": 5,
+    "name": "Tarta de Chocolate",
+    "category": "Postres",
+    "description": "Chocolate oscuro belga con cobertura satinada",
+    "price": 9.99,
+    "emoji": "🍫",
+    "vegetarian": true,
+    "vegan": false,
+    "glutenFree": false,
+    "spicy": false,
+    "allergens": ["gluten", "lácteos", "huevo", "frutos secos"]
+  },
+  {
+    "id": 6,
+    "name": "Agua Mineral",
+    "category": "Bebidas",
+    "description": "500ml de agua mineral sin gas",
+    "price": 2.99,
+    "emoji": "💧",
+    "vegetarian": true,
+    "vegan": true,
+    "glutenFree": true,
+    "spicy": false,
+    "allergens": []
+  },
+  {
+    "id": 7,
+    "name": "Vino Tinto",
+    "category": "Bebidas",
+    "description": "Copa de vino tinto de la casa",
+    "price": 5.99,
+    "emoji": "🍷",
+    "vegetarian": true,
+    "vegan": true,
+    "glutenFree": true,
+    "spicy": false,
+    "allergens": []
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "id": 2,
+  "name": "Epicure Gourmet",
+  "description": "Restaurante de alta cocina francesa",
+  "logo": "assets/images/epicure-logo.png",
+  "phone": "+34 987 654 321",
+  "whatsapp": "34987654321",
+  "email": "reservas@epicure.com",
+  "address": "Avenida Élite 456, Madrid",
+  "coordinates": {
+    "latitude": 40.4168,
+    "longitude": -3.7038
+  },
+  "hours": {
+    "monday": "Cerrado",
+    "tuesday": "13:00 - 23:00",
+    "wednesday": "13:00 - 23:00",
+    "thursday": "13:00 - 23:00",
+    "friday": "13:00 - 00:30",
+    "saturday": "12:00 - 00:30",
+    "sunday": "12:00 - 23:00"
+  },
+  "social": {
+    "instagram": "@epicure.gourmet",
+    "facebook": "epicuregourmet",
+    "twitter": "@epicuregourmet"
+  }
+}
