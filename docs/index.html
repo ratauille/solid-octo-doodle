@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comandago Platform - Sistema de Menú Digital Profesional">
+    <title>🍽️ Comandago Platform - Menú Digital</title>
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>🍽️ Comandago</h1>
+            </div>
+            <div class="navbar-menu">
+                <button class="language-switcher" id="languageSwitcher">
+                    <span id="currentLanguage">ES</span>
+                </button>
+                <button class="cart-button" id="cartButton">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h2 id="heroTitle">Bienvenido a Nuestro Menú Digital</h2>
+            <p id="heroSubtitle">Selecciona tus platos favoritos y disfruta la experiencia</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Category Tabs -->
+            <div class="category-tabs" id="categoryTabs">
+                <button class="tab-button active" data-category="all">
+                    <span id="allTab">Todos</span>
+                </button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Las tarjetas de menú se generarán dinámicamente aquí -->
+                <div class="loading" id="loadingSpinner">
+                    <p id="loadingText">Cargando menú...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="cartTitle">Carrito de Compras</h2>
+                <button class="modal-close" id="closeCartButton">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cartItems">
+                    <p id="emptyCartMessage">Tu carrito está vacío</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span id="subtotalLabel">Subtotal:</span>
+                        <span id="subtotalValue">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span id="taxLabel">Impuestos (10%):</span>
+                        <span id="taxValue">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span id="totalLabel">Total:</span>
+                        <span id="totalValue">$0.00</span>
+                    </div>
+                </div>
+                <button class="whatsapp-button" id="whatsappButton">
+                    <span class="whatsapp-icon">📱</span>
+                    <span id="orderButtonText">Pedir por WhatsApp</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p id="footerText">© 2026 Comandago Platform. Todos los derechos reservados.</p>
+            <p id="madeWith">Creado con ❤️ para restaurantes profesionales</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/whatsapp.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

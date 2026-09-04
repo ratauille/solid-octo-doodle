@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "name": "Tártar de Atún Aleta Azul",
+    "category": "entradas",
+    "description": "Aguacate tatemado, emulsión de chipotle y crujiente de alga nori.",
+    "price": 24.99,
+    "emoji": "🍣",
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": true,
+    "spicy": true,
+    "allergens": ["pescado", "mariscos"]
+  },
+  {
+    "id": "2",
+    "name": "Carpaccio de Res Wagyu",
+    "category": "entradas",
+    "description": "Láminas de trufa negra, lascas de parmesano de 24 meses y aceite de oliva extra virgen.",
+    "price": 32.99,
+    "emoji": "🥩",
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": true,
+    "spicy": false,
+    "allergens": ["lácteos"]
+  },
+  {
+    "id": "3",
+    "name": "Risotto de Langosta",
+    "category": "fuertes",
+    "description": "Azafrán español, mantequilla de cítricos y espárragos jóvenes.",
+    "price": 42.99,
+    "emoji": "🦞",
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": false,
+    "spicy": false,
+    "allergens": ["mariscos", "lácteos", "gluten"]
+  },
+  {
+    "id": "4",
+    "name": "Filete Mignon al Merlot",
+    "category": "fuertes",
+    "description": "Reducción de vino tinto, puré de coliflor trufado y vegetales de estación.",
+    "price": 48.99,
+    "emoji": "🥩",
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": true,
+    "spicy": false,
+    "allergens": ["lácteos"]
+  },
+  {
+    "id": "5",
+    "name": "Texturas de Chocolate",
+    "category": "postres",
+    "description": "Mousse de cacao 70%, tierra de avellana y helado de frutos rojos.",
+    "price": 14.99,
+    "emoji": "🍫",
+    "vegetarian": true,
+    "vegan": false,
+    "glutenFree": false,
+    "spicy": false,
+    "allergens": ["lácteos", "gluten", "frutos secos"]
+  },
+  {
+    "id": "6",
+    "name": "Postre de Frambuesa y Menta",
+    "category": "postres",
+    "description": "Gelatina de frambuesa, crema de menta y bizcocho de vainilla.",
+    "price": 12.99,
+    "emoji": "🍰",
+    "vegetarian": true,
+    "vegan": false,
+    "glutenFree": false,
+    "spicy": false,
+    "allergens": ["lácteos", "gluten", "huevo"]
+  }
+]
